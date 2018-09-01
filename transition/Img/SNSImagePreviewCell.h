@@ -15,6 +15,6 @@ typedef  void(^Hander)(id);
 @property(nonatomic, strong) UIScrollView *scrollView;
 @property(nonatomic, strong) UIImageView *imgView;
 
-@property(nonatomic,copy) Hander tapHander;
+@property(nonatomic,copy) Hander oneTapHander;
 
 @end

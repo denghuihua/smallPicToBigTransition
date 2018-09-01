@@ -7,7 +7,7 @@
 //
 
 #import "SNSImagePreviewViewController.h"
-#import "LYModalWeChatInteractiveAnimatedTransition.h"
+#import "SNSModalWeChatInteractiveAnimatedTransition.h"
 #import "GlobalDefine.h"
 #import "SNSImagePreviewCell.h"
 
@@ -15,16 +15,14 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
 
 @interface SNSImagePreviewViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) UIImageView *imgView;
-
-@property (nonatomic, strong) LYModalWeChatInteractiveAnimatedTransition *animatedTransition;
+@property (nonatomic, strong) SNSModalWeChatInteractiveAnimatedTransition *animatedTransition;
 @property (nonatomic, assign) CGPoint transitionImgViewCenter;
 
 @property (nonatomic, strong) UICollectionView *imgCollectionView;
 @property (nonatomic, strong) NSMutableArray *imgDataArr;
-
 @property (nonatomic, assign) NSInteger currentPreviewIndex;
 
+@property (nonatomic, strong)UIPageControl *pageControl;
 
 @end
 
@@ -38,36 +36,27 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-//    UIImage *image = [UIImage imageNamed:@"0.jpg"];
-//    CGSize size = [self backImageSize:image];
-//    self.imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (kScreenHeight - size.height) * 0.5, size.width, size.height)];
-//    self.imgView.image = image;
-//    self.imgView.userInteractionEnabled = YES;
-//    [self.view addSubview:self.imgView];
+
     [self.view addSubview:self.imgCollectionView];
     self.imgCollectionView.frame = self.view.bounds;
-    [self.imgCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:2 inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionLeft];
     
-    self.transitionImgViewCenter = self.imgView.center;
-    self.beforeImageViewFrame = CGRectMake(50, 100, 100, 100);
+    [self.view addSubview:self.pageControl];
     
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.backgroundColor = [UIColor redColor];
-    btn.frame = CGRectMake(20, 20, 44, 44);
-    [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    [self.imgCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionLeft];
+    self.pageControl.currentPage = self.currentPreviewIndex;
     
     UIPanGestureRecognizer *interactiveTransitionRecognizer;
     interactiveTransitionRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(interactiveTransitionRecognizerAction:)];
     [self.view addGestureRecognizer:interactiveTransitionRecognizer];
-    
 }
 
 - (void)interactiveTransitionRecognizerAction:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
+    SNSImagePreviewCell *cell = (SNSImagePreviewCell *)[self.imgCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0]];
+    UIImageView *currentPreviewImageView = cell.imgView;
+    SNSImagePreviewModel *model = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
     
+    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
     CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
     scale = scale < 0 ? 0 : scale;
     
@@ -79,7 +68,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
             
             //1. 设置代理
             self.animatedTransition = nil;
-            
+            self.transitionImgViewCenter = currentPreviewImageView.center;
             self.transitioningDelegate = self.animatedTransition;
             
             self.animatedTransition.gestureRecognizer = gestureRecognizer;
@@ -91,10 +80,10 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
             break;
         case UIGestureRecognizerStateChanged: {
             
-            _imgView.center = CGPointMake(self.transitionImgViewCenter.x + translation.x * scale, self.transitionImgViewCenter.y + translation.y);
-            _imgView.transform = CGAffineTransformMakeScale(scale, scale);
+            currentPreviewImageView.center = CGPointMake(self.transitionImgViewCenter.x + translation.x * scale, self.transitionImgViewCenter.y + translation.y);
+            currentPreviewImageView.transform = CGAffineTransformMakeScale(scale, scale);
             
-            self.animatedTransition.beforeImageViewFrame = self.beforeImageViewFrame;
+            self.animatedTransition.beforeImageViewFrame = model.smallImgFrame;
             
         }
             break;
@@ -105,31 +94,38 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
             if (scale > 0.95f) {
                 [UIView animateWithDuration:0.2 animations:^{
                     
-                    self.imgView.center = self.transitionImgViewCenter;
-                    self.imgView.transform = CGAffineTransformMakeScale(1, 1);
+                    currentPreviewImageView.center = self.transitionImgViewCenter;
+                    currentPreviewImageView.transform = CGAffineTransformMakeScale(1, 1);
                 } completion:^(BOOL finished) {
                     
-                    self.imgView.transform = CGAffineTransformIdentity;
+                    currentPreviewImageView.transform = CGAffineTransformIdentity;
                 }];
             }else{
                 
             }
-            self.animatedTransition.currentImageView = _imgView;
-            self.animatedTransition.currentImageViewFrame = _imgView.frame;
+            self.animatedTransition.currentImageView = currentPreviewImageView;
+            self.animatedTransition.currentImageViewFrame = currentPreviewImageView.frame;
             
             self.animatedTransition.gestureRecognizer = nil;
         }
     }
 }
 
-//待会修改
-- (void)btnAction:(UIButton *)btn{
-      
-    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (void)backToSmallView:(NSInteger)index{
+    //找到当前imageView
+    SNSImagePreviewCell *cell = (SNSImagePreviewCell *)[self.imgCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0]];
+    SNSImagePreviewModel *item = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
+    self.animatedTransition = nil;
+    
+    //1. 传入必要的3个参数
+    [self.animatedTransition setTransitionImgName:item.imgName];
+    [self.animatedTransition setTransitionBeforeImgFrame:item.smallImgFrame];
+    [self.animatedTransition setTransitionAfterImgFrame:cell.imgView.frame];
+    
+    //2.设置代理
+    self.transitioningDelegate = self.animatedTransition;
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -153,7 +149,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     
     //tap回调
     __weak SNSImagePreviewViewController *weakSelf = self;
-    cell.tapHander = ^(UITapGestureRecognizer *tapGes){
+    cell.oneTapHander  = ^(UITapGestureRecognizer *tapGes){
         __strong SNSImagePreviewViewController *strongSelf = weakSelf;
         [strongSelf backToSmallView:indexPath.item];
     };
@@ -163,15 +159,19 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    self.currentPreviewIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    self.pageControl.currentPage = self.currentPreviewIndex;
+
 }
 
 #pragma mark - getter
 
-- (LYModalWeChatInteractiveAnimatedTransition *)animatedTransition{
+- (SNSModalWeChatInteractiveAnimatedTransition *)animatedTransition{
     if (!_animatedTransition) {
-        _animatedTransition = [[LYModalWeChatInteractiveAnimatedTransition alloc] init];
+        _animatedTransition = [[SNSModalWeChatInteractiveAnimatedTransition alloc] init];
     }
     return _animatedTransition;
 }
@@ -201,11 +201,22 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
         if (@available(iOS 11.0, *)) {
             _imgCollectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
-        _imgCollectionView.backgroundColor = [UIColor redColor];
+        _imgCollectionView.backgroundColor = [UIColor blackColor];
     }
     return _imgCollectionView;
 }
 
+- (UIPageControl *)pageControl{
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenHeight - 60, kScreenWidth, 44)];
+        _pageControl.numberOfPages = self.imgDataArr.count;
+        _pageControl.currentPage = 0;
+        _pageControl.userInteractionEnabled = NO;
+        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor yellowColor];
+    }
+    return _pageControl;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

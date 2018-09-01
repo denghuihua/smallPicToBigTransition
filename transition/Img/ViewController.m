@@ -7,12 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "LYModalWeChatInteractiveAnimatedTransition.h"
+#import "SNSModalWeChatInteractiveAnimatedTransition.h"
 #import "SNSImagePreviewViewController.h"
 
 #import "GlobalDefine.h"
 @interface ViewController ()
-@property (nonatomic, strong) LYModalWeChatInteractiveAnimatedTransition *animatedTransition;
+@property (nonatomic, strong) SNSModalWeChatInteractiveAnimatedTransition *animatedTransition;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) NSMutableArray *imgDataArr;
 @end
@@ -61,18 +61,19 @@
 - (void)tapAction:(UITapGestureRecognizer *)tapGes{
     
     UIView *view = tapGes.view;
-    
+    NSInteger currentSelectIndex = view.tag - 10;
+    SNSImagePreviewModel *item = [self.imgDataArr objectAtIndex:currentSelectIndex];
     self.animatedTransition = nil;
     
     //1. 传入必要的3个参数
-    [self.animatedTransition setTransitionImgView:self.imageView];
-    [self.animatedTransition setTransitionBeforeImgFrame:self.imageView.frame];
-    [self.animatedTransition setTransitionAfterImgFrame:[self backScreenImageViewRectWithImage:self.imageView.image]];
+    [self.animatedTransition setTransitionImgName:item.imgName];
+    [self.animatedTransition setTransitionBeforeImgFrame:item.smallImgFrame];
+    [self.animatedTransition setTransitionAfterImgFrame:[self backScreenImageViewRectWithImage:[UIImage imageNamed:item.imgName]]];
     
     
     SNSImagePreviewViewController *second = [[SNSImagePreviewViewController alloc] init];
     [second setImageDataArr:self.imgDataArr currentSelectIndex:view.tag - 10];
-    second.beforeImageViewFrame = self.imageView.frame;
+
     //2.设置代理
     second.transitioningDelegate = self.animatedTransition;
     //3.push跳转
@@ -97,9 +98,9 @@
     return rect;
 }
 
-- (LYModalWeChatInteractiveAnimatedTransition *)animatedTransition {
+- (SNSModalWeChatInteractiveAnimatedTransition *)animatedTransition {
     if (!_animatedTransition) {
-        _animatedTransition = [[LYModalWeChatInteractiveAnimatedTransition alloc] init];
+        _animatedTransition = [[SNSModalWeChatInteractiveAnimatedTransition alloc] init];
     }
     return _animatedTransition;
 }

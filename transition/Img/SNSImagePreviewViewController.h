@@ -10,7 +10,6 @@
 #import "SNSImagePreviewModel.h"
 
 @interface SNSImagePreviewViewController : UIViewController
-@property (nonatomic, assign) CGRect            beforeImageViewFrame;   //图片的frame
 
 - (void)setImageDataArr:(NSArray<SNSImagePreviewModel *> *)imgArr currentSelectIndex:(NSInteger)tapIndex;
 
