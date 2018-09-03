@@ -17,6 +17,7 @@
 		4A44E5762137B186008E75C2 /* ImgUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5752137B186008E75C2 /* ImgUITests.m */; };
 		4A44E5962137EB6B008E75C2 /* SNSImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */; };
 		4A44E5992137F19B008E75C2 /* IMG_0904.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4A44E5982137F19A008E75C2 /* IMG_0904.JPG */; };
+		4A52467B213CCE9300024890 /* Model-WeChat-interactive in Resources */ = {isa = PBXBuildFile; fileRef = 4A52467A213CCE9200024890 /* Model-WeChat-interactive */; };
 		4A6350F62138EF4500577956 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350ED2138EF4000577956 /* 3.jpg */; };
 		4A6350F72138EF4500577956 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350EE2138EF4100577956 /* 6.jpg */; };
 		4A6350F82138EF4500577956 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350EF2138EF4100577956 /* 4.jpg */; };
@@ -28,10 +29,6 @@
 		4A6350FE2138EF4500577956 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350F52138EF4400577956 /* 2.jpg */; };
 		4A63512A213960D000577956 /* SNSImagePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A635129213960D000577956 /* SNSImagePreviewCell.m */; };
 		4A63512D21396ECC00577956 /* SNSImagePreviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */; };
-		4A8AD2B7213A18E600E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8AD2B3213A18E500E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.m */; };
-		4A8AD2B8213A18E600E2EDB1 /* LYModalWeChatPercentDrivenInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8AD2B5213A18E500E2EDB1 /* LYModalWeChatPercentDrivenInteractive.m */; };
-		4A8AD2BD213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8AD2B9213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.m */; };
-		4A8AD2BE213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8AD2BC213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +69,7 @@
 		4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewViewController.m; sourceTree = "<group>"; };
 		4A44E5972137EC70008E75C2 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		4A44E5982137F19A008E75C2 /* IMG_0904.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0904.JPG; sourceTree = "<group>"; };
+		4A52467A213CCE9200024890 /* Model-WeChat-interactive */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Model-WeChat-interactive"; sourceTree = "<group>"; };
 		4A6350ED2138EF4000577956 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		4A6350EE2138EF4100577956 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		4A6350EF2138EF4100577956 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
@@ -86,14 +84,6 @@
 		4A635129213960D000577956 /* SNSImagePreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewCell.m; sourceTree = "<group>"; };
 		4A63512B21396ECC00577956 /* SNSImagePreviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewModel.h; sourceTree = "<group>"; };
 		4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewModel.m; sourceTree = "<group>"; };
-		4A8AD2B3213A18E500E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSModalWeChatInteractiveAnimatedTransition.m; sourceTree = "<group>"; };
-		4A8AD2B4213A18E500E2EDB1 /* LYModalWeChatPercentDrivenInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYModalWeChatPercentDrivenInteractive.h; sourceTree = "<group>"; };
-		4A8AD2B5213A18E500E2EDB1 /* LYModalWeChatPercentDrivenInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYModalWeChatPercentDrivenInteractive.m; sourceTree = "<group>"; };
-		4A8AD2B6213A18E600E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSModalWeChatInteractiveAnimatedTransition.h; sourceTree = "<group>"; };
-		4A8AD2B9213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePopAnimator.m; sourceTree = "<group>"; };
-		4A8AD2BA213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePopAnimator.h; sourceTree = "<group>"; };
-		4A8AD2BB213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePushAnimator.h; sourceTree = "<group>"; };
-		4A8AD2BC213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePushAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +137,8 @@
 		4A44E5502137B185008E75C2 /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				4A635112213940A700577956 /* Modal-WeChat-Interactive */,
+				4A52467A213CCE9200024890 /* Model-WeChat-interactive */,
+				4A524679213CCE6400024890 /* ImgPreview */,
 				4A44E5512137B185008E75C2 /* AppDelegate.h */,
 				4A44E5522137B185008E75C2 /* AppDelegate.m */,
 				4A44E5542137B185008E75C2 /* ViewController.h */,
@@ -155,15 +146,9 @@
 				4A44E5572137B185008E75C2 /* Main.storyboard */,
 				4A44E55A2137B186008E75C2 /* Assets.xcassets */,
 				4A44E55C2137B186008E75C2 /* LaunchScreen.storyboard */,
-				4A44E55F2137B186008E75C2 /* Info.plist */,
 				4A44E5602137B186008E75C2 /* main.m */,
-				4A44E5942137EB6B008E75C2 /* SNSImagePreviewViewController.h */,
-				4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */,
+				4A44E55F2137B186008E75C2 /* Info.plist */,
 				4A635125213946D400577956 /* Img-Bridging-Header.h */,
-				4A635128213960D000577956 /* SNSImagePreviewCell.h */,
-				4A635129213960D000577956 /* SNSImagePreviewCell.m */,
-				4A63512B21396ECC00577956 /* SNSImagePreviewModel.h */,
-				4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */,
 			);
 			path = Img;
 			sourceTree = "<group>";
@@ -186,6 +171,19 @@
 			path = ImgUITests;
 			sourceTree = "<group>";
 		};
+		4A524679213CCE6400024890 /* ImgPreview */ = {
+			isa = PBXGroup;
+			children = (
+				4A44E5942137EB6B008E75C2 /* SNSImagePreviewViewController.h */,
+				4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */,
+				4A635128213960D000577956 /* SNSImagePreviewCell.h */,
+				4A635129213960D000577956 /* SNSImagePreviewCell.m */,
+				4A63512B21396ECC00577956 /* SNSImagePreviewModel.h */,
+				4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */,
+			);
+			path = ImgPreview;
+			sourceTree = "<group>";
+		};
 		4A6350FF2138EF4700577956 /* img */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,22 +199,6 @@
 			);
 			name = img;
 			path = "New Group";
-			sourceTree = "<group>";
-		};
-		4A635112213940A700577956 /* Modal-WeChat-Interactive */ = {
-			isa = PBXGroup;
-			children = (
-				4A8AD2BA213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.h */,
-				4A8AD2B9213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.m */,
-				4A8AD2BB213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.h */,
-				4A8AD2BC213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.m */,
-				4A8AD2B6213A18E600E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.h */,
-				4A8AD2B3213A18E500E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.m */,
-				4A8AD2B4213A18E500E2EDB1 /* LYModalWeChatPercentDrivenInteractive.h */,
-				4A8AD2B5213A18E500E2EDB1 /* LYModalWeChatPercentDrivenInteractive.m */,
-			);
-			name = "Modal-WeChat-Interactive";
-			path = "../../../Downloads/LYCustomTransition-master 2/LYCustomTransitionDemo/Modal-Transition/Modal-WeChat-Interactive";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +316,7 @@
 				4A6350FB2138EF4500577956 /* 0.jpg in Resources */,
 				4A6350FE2138EF4500577956 /* 2.jpg in Resources */,
 				4A44E55E2137B186008E75C2 /* LaunchScreen.storyboard in Resources */,
+				4A52467B213CCE9300024890 /* Model-WeChat-interactive in Resources */,
 				4A44E55B2137B186008E75C2 /* Assets.xcassets in Resources */,
 				4A44E5592137B185008E75C2 /* Main.storyboard in Resources */,
 			);
@@ -363,12 +346,8 @@
 				4A44E5562137B185008E75C2 /* ViewController.m in Sources */,
 				4A44E5612137B186008E75C2 /* main.m in Sources */,
 				4A63512D21396ECC00577956 /* SNSImagePreviewModel.m in Sources */,
-				4A8AD2BD213A18F900E2EDB1 /* SNSNavWeChatInteractivePopAnimator.m in Sources */,
 				4A44E5962137EB6B008E75C2 /* SNSImagePreviewViewController.m in Sources */,
 				4A44E5532137B185008E75C2 /* AppDelegate.m in Sources */,
-				4A8AD2B8213A18E600E2EDB1 /* LYModalWeChatPercentDrivenInteractive.m in Sources */,
-				4A8AD2B7213A18E600E2EDB1 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */,
-				4A8AD2BE213A18F900E2EDB1 /* SNSNavWeChatInteractivePushAnimator.m in Sources */,
 				4A63512A213960D000577956 /* SNSImagePreviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
