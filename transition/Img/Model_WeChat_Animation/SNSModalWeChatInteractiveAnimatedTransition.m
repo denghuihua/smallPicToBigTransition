@@ -9,13 +9,13 @@
 #import "SNSModalWeChatInteractiveAnimatedTransition.h"
 #import "SNSNavWeChatInteractivePushAnimator.h"
 #import "SNSNavWeChatInteractivePopAnimator.h"
-#import "LYModalWeChatPercentDrivenInteractive.h"
+#import "SNSModalWeChatPercentDrivenInteractive.h"
 
 @interface SNSModalWeChatInteractiveAnimatedTransition ()
 
 @property (nonatomic, strong) SNSNavWeChatInteractivePushAnimator *customPush;
 @property (nonatomic, strong) SNSNavWeChatInteractivePopAnimator  *customPop;
-@property (nonatomic, strong) LYModalWeChatPercentDrivenInteractive  *percentIntractive;
+@property (nonatomic, strong) SNSModalWeChatPercentDrivenInteractive  *percentIntractive;
 
 @end
 @implementation SNSModalWeChatInteractiveAnimatedTransition
@@ -87,9 +87,9 @@
     }
     return _customPop;
 }
-- (LYModalWeChatPercentDrivenInteractive *)percentIntractive{
+- (SNSModalWeChatPercentDrivenInteractive *)percentIntractive{
     if (!_percentIntractive) {
-        _percentIntractive = [[LYModalWeChatPercentDrivenInteractive alloc] initWithGestureRecognizer:self.gestureRecognizer];
+        _percentIntractive = [[SNSModalWeChatPercentDrivenInteractive alloc] initWithGestureRecognizer:self.gestureRecognizer];
     }
     return _percentIntractive;
     

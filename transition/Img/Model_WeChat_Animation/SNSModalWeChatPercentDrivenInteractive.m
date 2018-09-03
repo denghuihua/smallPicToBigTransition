@@ -6,9 +6,9 @@
 //  Copyright © 2017年 liyang. All rights reserved.
 //
 
-#import "LYModalWeChatPercentDrivenInteractive.h"
+#import "SNSModalWeChatPercentDrivenInteractive.h"
 #import "GlobalDefine.h"
-@interface LYModalWeChatPercentDrivenInteractive ()
+@interface SNSModalWeChatPercentDrivenInteractive ()
 
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
 @property (nonatomic, strong, readonly) UIPanGestureRecognizer *gestureRecognizer;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation LYModalWeChatPercentDrivenInteractive
+@implementation SNSModalWeChatPercentDrivenInteractive
 {
     BOOL _isFirst;
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LYModalWeChatPercentDrivenInteractive : UIPercentDrivenInteractiveTransition
+@interface SNSModalWeChatPercentDrivenInteractive : UIPercentDrivenInteractiveTransition
 
 - (instancetype)initWithGestureRecognizer:(UIPanGestureRecognizer*)gestureRecognizer;
 
