@@ -8,8 +8,11 @@
 
 #import "SNSImagePreviewViewController.h"
 #import "SNSModalWeChatInteractiveAnimatedTransition.h"
-#import "GlobalDefine.h"
+#import "SNSUIConstants.h"
 #import "SNSImagePreviewCell.h"
+#import "UIImageView+Proces.h"
+#import "UIImage+SizeHelper.h"
+#import "SVProgressHUD.h"
 
 static NSString *CellIdentifier = @"SNSImagePreviewCell";
 
@@ -24,6 +27,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
 
 @property (nonatomic, strong)UIPageControl *pageControl;
 
+@property (nonatomic, assign)BOOL isViewDidAppear;
 @end
 
 @implementation SNSImagePreviewViewController
@@ -40,7 +44,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     [self.view addSubview:self.imgCollectionView];
     self.imgCollectionView.frame = self.view.bounds;
     
-    [self.view addSubview:self.pageControl];
+  
     
     [self.imgCollectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionLeft];
     self.pageControl.currentPage = self.currentPreviewIndex;
@@ -50,6 +54,21 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     [self.view addGestureRecognizer:interactiveTransitionRecognizer];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    _isViewDidAppear = YES;
+    SNSImagePreviewModel *model = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
+    UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:model.bigImgUrl];
+    if (!cacheImage) {
+        [SVProgressHUD show];
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [SVProgressHUD dismiss];
+}
+
 - (void)interactiveTransitionRecognizerAction:(UIPanGestureRecognizer *)gestureRecognizer
 {
     SNSImagePreviewCell *cell = (SNSImagePreviewCell *)[self.imgCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0]];
@@ -57,7 +76,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     SNSImagePreviewModel *model = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
     
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
-    CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
+    CGFloat scale = 1 - fabs(translation.y / ScreenHeight);
     scale = scale < 0 ? 0 : scale;
     
     NSLog(@"second = %f", scale);
@@ -112,32 +131,23 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
 }
 
 
-- (void)backToSmallView:(NSInteger)index{
-    //找到当前imageView
-    SNSImagePreviewCell *cell = (SNSImagePreviewCell *)[self.imgCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0]];
-    SNSImagePreviewModel *item = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
-    self.animatedTransition = nil;
-    
-    //1. 传入必要的3个参数
-    [self.animatedTransition setTransitionImgName:item.imgName];
-    [self.animatedTransition setTransitionBeforeImgFrame:item.smallImgFrame];
-    [self.animatedTransition setTransitionAfterImgFrame:cell.imgView.frame];
-    
-    //2.设置代理
-    self.transitioningDelegate = self.animatedTransition;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+//- (void)backToSmallView:(NSInteger)index{
+//    //找到当前imageView
+//    SNSImagePreviewCell *cell = (SNSImagePreviewCell *)[self.imgCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForItem:self.currentPreviewIndex inSection:0]];
+//    SNSImagePreviewModel *item = [self.imgDataArr objectAtIndex:self.currentPreviewIndex];
+//    self.animatedTransition = nil;
+//    
+//    //1. 传入必要的3个参数
+//    [self.animatedTransition setTransitionImgUrl:item.bigImgUrl];
+//    [self.animatedTransition setTransitionBeforeImgFrame:item.smallImgFrame];
+//    [self.animatedTransition setTransitionAfterImgFrame:cell.imgView.frame];
+//    
+//    //2.设置代理
+//    self.transitioningDelegate = self.animatedTransition;
+//    
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
 
-- (CGSize)backImageSize:(UIImage *)image{
-    
-    CGSize size = image.size;
-    CGSize newSize;
-    newSize.width = kScreenWidth;
-    newSize.height = newSize.width / size.width * size.height;
-    
-    return newSize;
-}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -151,14 +161,55 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     __weak SNSImagePreviewViewController *weakSelf = self;
     cell.oneTapHander  = ^(UITapGestureRecognizer *tapGes){
         __strong SNSImagePreviewViewController *strongSelf = weakSelf;
-        [strongSelf backToSmallView:indexPath.item];
+           [strongSelf dismissViewControllerAnimated:YES completion:nil];
     };
     
     SNSImagePreviewModel *imgModel = [self.imgDataArr objectAtIndex:indexPath.item];
-    cell.imgView.image = [UIImage imageNamed:imgModel.imgName];
+    UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imgModel.bigImgUrl];
+    UIImage *originSmallCacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imgModel.originSmallImgUrl];
+    //原图 》 原图缩略图 》 剪裁图
+    if (!cacheImage) {
+        [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.originSmallImgUrl] placeholderImage:nil];
+        //show loading
+        if (self.isViewDidAppear) {
+            [SVProgressHUD show];
+        }
+        cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.imageSize];
+        cell.scrollView.contentSize = cell.imgView.frame.size;
+        [cell adjustZoomScale];
+        
+        //下载大图
+        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] options:SDWebImageRefreshCached progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            [collectionView reloadData];
+        }];
+    }else if (!originSmallCacheImage){
+        [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.smallImgUrl] placeholderImage:nil];
+        //show loading
+        if (self.isViewDidAppear) {
+            [SVProgressHUD show];
+        }
+        cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.clipImageSize];
+        cell.scrollView.contentSize = cell.imgView.frame.size;
+        [cell adjustZoomScale];
+        
+        //下载大图
+        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] options:SDWebImageRefreshCached progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            [collectionView reloadData];
+        }];
+    }
+    else
+    {
+        cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.imageSize];
+        cell.scrollView.contentSize = cell.imgView.frame.size;
+        [cell adjustZoomScale];
+        [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            
+        } completedUIChangeBlock:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            [SVProgressHUD dismiss];
+        }];
+    }
     return cell;
 }
-
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -189,7 +240,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
         listFlowLayout.minimumLineSpacing = lineSpace;
         
        
-        listFlowLayout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight-BOTTOM_SAFE_AREA-(kAPP_STATUSBAR_HEIGHT-20));
+        listFlowLayout.itemSize = CGSizeMake(ScreenWidth, ScreenHeight);
         _imgCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:listFlowLayout];
         _imgCollectionView.dataSource = self;
         _imgCollectionView.delegate = self;
@@ -208,7 +259,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
 
 - (UIPageControl *)pageControl{
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenHeight - 60, kScreenWidth, 44)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, ScreenHeight - 60, ScreenWidth, 44)];
         _pageControl.numberOfPages = self.imgDataArr.count;
         _pageControl.currentPage = 0;
         _pageControl.userInteractionEnabled = NO;

@@ -5,6 +5,14 @@
 //  Created by liyang on 2017/2/23.
 //  Copyright © 2017年 liyang. All rights reserved.
 //
+/*
+  图片动画： 需要sever提供 原图 的清晰度低一点的图，用于网络不好的情况下，展示
+  
+  完整模糊图展示之后  加载原图（优化）
+ 
+  花式排版的裁剪图
+ */
+
 
 #import <UIKit/UIKit.h>
 

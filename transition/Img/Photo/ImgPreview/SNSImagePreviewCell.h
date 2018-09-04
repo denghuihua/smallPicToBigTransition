@@ -17,4 +17,5 @@ typedef  void(^Hander)(id);
 
 @property(nonatomic,copy) Hander oneTapHander;
 
+- (void)adjustZoomScale;
 @end

@@ -7,11 +7,12 @@
 //
 
 #import "SNSNavWeChatInteractivePopAnimator.h"
-
+#import "UIImageView+Proces.h"
+#define animationTime .25
 @implementation SNSNavWeChatInteractivePopAnimator
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 0.5;
+    return animationTime;
 }
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
@@ -25,7 +26,7 @@
     
     //图片背景的空白view (设置和控制器的背景颜色一样，给人一种图片被调走的假象)
     UIView *imgBgWhiteView = [[UIView alloc] initWithFrame:self.transitionBeforeImgFrame];
-    imgBgWhiteView.backgroundColor = [UIColor blackColor];
+    imgBgWhiteView.backgroundColor = toView.backgroundColor;
     [containerView addSubview:imgBgWhiteView];
     
     //有渐变的黑色背景
@@ -41,12 +42,20 @@
 //    [containerView addSubview:fromView];
     
     //过渡的图片
-    UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.transitionImgName]];
+    UIImageView *transitionImgView = [[UIImageView alloc] init];
+    [transitionImgView sns_setImageWithURL:[NSURL URLWithString:self.transitionImgUrl] placeholderImage:nil];
+//    UIImageView *transitionImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.transitionImgName]];
     transitionImgView.frame = self.transitionAfterImgFrame;
+    transitionImgView.contentMode = UIViewContentModeScaleAspectFill;
+    transitionImgView.clipsToBounds = YES;
     [transitionContext.containerView addSubview:transitionImgView];
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.7 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveLinear animations:^{
-        
+//    if (!transitionImgView.image || self.transitionAfterImgFrame.size.height / self.transitionAfterImgFrame.size.width > 3) {
+//        [transitionImgView sns_setImageWithURL:[NSURL URLWithString:self.transitionSmallImgUrl] placeholderImage:nil];
+//    }
+    //[self transitionDuration:transitionContext]
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0  options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        transitionImgView.layer.contentsRect = self.imgViewContentRect;
         transitionImgView.frame = self.transitionBeforeImgFrame;
         bgView.alpha = 0;
         

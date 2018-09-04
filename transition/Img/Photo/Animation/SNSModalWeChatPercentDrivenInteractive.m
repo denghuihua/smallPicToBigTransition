@@ -7,7 +7,8 @@
 //
 
 #import "SNSModalWeChatPercentDrivenInteractive.h"
-#import "GlobalDefine.h"
+#import "SNSUIConstants.h"
+
 @interface SNSModalWeChatPercentDrivenInteractive ()
 
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
@@ -50,7 +51,7 @@
     
     CGPoint translation = [gesture translationInView:gesture.view];
     
-    CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
+    CGFloat scale = 1 - fabs(translation.y / ScreenHeight);
     scale = scale < 0 ? 0 : scale;
     return scale;
 }

@@ -7,11 +7,14 @@
 //
 
 #import "SNSImagePreviewCell.h"
-#import "GlobalDefine.h"
+#import "SNSUIConstants.h"
+#import "SNSImagePreviewModel.h"
 
 #define kSNSPhotoPanCloseGuideViewHasShowed @"kSNSPhotoPanCloseGuideViewHasShowed"
 
 @interface SNSImagePreviewCell()<UIScrollViewDelegate>
+
+
 
 @end
 
@@ -19,7 +22,8 @@
 
 - (id)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        [self baseConfig];    
+        [self baseConfig];  
+        
     }
     return self;
 }
@@ -27,6 +31,8 @@
 - (void)baseConfig{
     [self.contentView addSubview:self.scrollView];
     [self.scrollView addSubview:self.imgView];
+    
+    self.scrollView.frame = self.bounds;
     
     UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneTapAction:)];
     oneTap.numberOfTapsRequired = 1;
@@ -37,19 +43,6 @@
     [self.imgView addGestureRecognizer:doubleTap];
     
     [oneTap requireGestureRecognizerToFail:doubleTap];
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.scrollView.frame = self.bounds;
-    if (self.imgView.image) {
-        CGFloat height = self.imgView.image.size.height/self.imgView.image.size.width*kScreenWidth;
-        CGFloat y = (kScreenHeight-BOTTOM_SAFE_AREA - height - (kAPP_STATUSBAR_HEIGHT-20)) * 0.5;
-        y = y > 0 ? y : 0;
-        self.imgView.frame = CGRectMake(0, y, kScreenWidth, height);
-        self.scrollView.contentSize = CGSizeMake(kScreenWidth, height);
-    }
 }
 
 - (void)oneTapAction:(UITapGestureRecognizer *)tapGes{
@@ -71,6 +64,36 @@
     CGFloat y = center.y - h * .5f;
     CGRect frame = (CGRect){CGPointMake(x, y),CGSizeMake(w, h)};
     return frame;
+}
+
+- (void)adjustZoomScale
+{
+    if (!self.imgView) {
+        return;
+    }
+    
+    CGSize imgSize = self.imgView.image.size;
+    
+    //判断首先缩放的值
+    float scaleX = self.imgView.superview.frame.size.width/imgSize.width;
+    float scaleY = self.imgView.superview.frame.size.height/imgSize.height;
+    
+    if (scaleX > scaleY)
+    {
+        float imgViewWidth = imgSize.width * scaleY;
+        self.imgView.frame = (CGRect){self.imgView.superview.frame.size.width/2 - imgViewWidth/2,0,imgViewWidth,self.imgView.superview.frame.size.height};
+        float x = self.frame.size.width/self.imgView.frame.size.width;
+        self.scrollView.maximumZoomScale = MAX(x, 1.8);
+        self.scrollView.maximumZoomScale = MIN(self.scrollView.maximumZoomScale, 3);
+    }
+    else
+    {
+        float imgViewHeight = imgSize.height * scaleX;
+        self.imgView.frame = (CGRect){0,self.imgView.superview.frame.size.height/2 - imgViewHeight/2,self.imgView.superview.frame.size.width,imgViewHeight};
+        float y = self.frame.size.height/self.imgView.frame.size.height;
+        self.scrollView.maximumZoomScale = MAX(y, 1.8);
+        self.scrollView.maximumZoomScale = MIN(self.scrollView.maximumZoomScale, 3);
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -115,7 +138,12 @@
         _scrollView.maximumZoomScale = 3.;
         _scrollView.minimumZoomScale = 1.;
         _scrollView.zoomScale = 1.;
-        _scrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-BOTTOM_SAFE_AREA);
+        _scrollView.contentSize = CGSizeMake(ScreenWidth, ScreenHeight- SNS_TabbarHeight);
+        _scrollView.backgroundColor = [UIColor clearColor];
+        
+        if (@available(iOS 11.0, *)) {
+            _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } 
     }
     return _scrollView;
 }
@@ -124,6 +152,8 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init];
         _imgView.userInteractionEnabled = YES;
+        _imgView.backgroundColor = [UIColor clearColor];
+        
     }
     return _imgView;
 }

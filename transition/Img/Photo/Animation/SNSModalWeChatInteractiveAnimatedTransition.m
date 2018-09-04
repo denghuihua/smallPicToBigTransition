@@ -21,9 +21,21 @@
 @implementation SNSModalWeChatInteractiveAnimatedTransition
 
 /** 转场过渡的图片 */
-- (void)setTransitionImgName:(NSString *)imgName{
-    self.customPush.transitionImgName = imgName;
-    self.customPop.transitionImgName = imgName;
+- (void)setTransitionImgViewContentRect:(CGRect)contentRect{
+    self.customPush.imgViewContentRect  = contentRect;
+    self.customPop.imgViewContentRect = contentRect;
+}
+
+/** 转场过渡的图片 */
+- (void)setTransitionImgUrl:(NSString *)imgUrl{
+    self.customPush.transitionImgUrl  = imgUrl;
+    self.customPop.transitionImgUrl = imgUrl;
+}
+
+/** 转场过渡的图片 */
+- (void)setTransitionSmallImgUrl:(NSString *)imgUrl{
+    self.customPush.transitionSmallImgUrl  = imgUrl;
+    self.customPop.transitionSmallImgUrl = imgUrl;
 }
 
 /** 转场前的图片frame */
@@ -37,6 +49,11 @@
 - (void)setTransitionAfterImgFrame:(CGRect)frame{
     self.customPush.transitionAfterImgFrame = frame;
     self.customPop.transitionAfterImgFrame = frame;
+}
+
+- (void)setTransitionAfterSmallImgFrame:(CGRect)frame{
+    self.customPush.transitionAfterSmallImgFrame = frame;
+    self.customPop.transitionAfterSmallImgFrame = frame;
 }
 
 -(void)setBeforeImageViewFrame:(CGRect)beforeImageViewFrame{

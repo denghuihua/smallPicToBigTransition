@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A38F256213D18A500123DA1 /* UIImage+Proces.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F254213D18A400123DA1 /* UIImage+Proces.m */; };
+		4A38F25C213D18C300123DA1 /* UIImageView+Balloon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F259213D18C300123DA1 /* UIImageView+Balloon.m */; };
+		4A38F25D213D18C300123DA1 /* UIImageView+Proces.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F25B213D18C300123DA1 /* UIImageView+Proces.m */; };
+		4A38F261213D19EF00123DA1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F25F213D19EE00123DA1 /* UIImageView+WebCache.m */; };
+		4A38F283213D1A1400123DA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4A38F263213D1A1400123DA1 /* LICENSE */; };
+		4A38F284213D1A1400123DA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A38F264213D1A1400123DA1 /* README.md */; };
+		4A38F285213D1A1400123DA1 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F267213D1A1400123DA1 /* NSData+ImageContentType.m */; };
+		4A38F286213D1A1400123DA1 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F269213D1A1400123DA1 /* SDImageCache.m */; };
+		4A38F287213D1A1400123DA1 /* SDWebImageCompat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F26B213D1A1400123DA1 /* SDWebImageCompat.m */; };
+		4A38F288213D1A1400123DA1 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F26D213D1A1400123DA1 /* SDWebImageDecoder.m */; };
+		4A38F289213D1A1400123DA1 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F26F213D1A1400123DA1 /* SDWebImageDownloader.m */; };
+		4A38F28A213D1A1400123DA1 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F271213D1A1400123DA1 /* SDWebImageDownloaderOperation.m */; };
+		4A38F28B213D1A1400123DA1 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F273213D1A1400123DA1 /* SDWebImageManager.m */; };
+		4A38F28C213D1A1400123DA1 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F276213D1A1400123DA1 /* SDWebImagePrefetcher.m */; };
+		4A38F28D213D1A1400123DA1 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F278213D1A1400123DA1 /* UIButton+WebCache.m */; };
+		4A38F28E213D1A1400123DA1 /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F27A213D1A1400123DA1 /* UIImage+GIF.m */; };
+		4A38F28F213D1A1400123DA1 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F27C213D1A1400123DA1 /* UIImage+MultiFormat.m */; };
+		4A38F290213D1A1400123DA1 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F27E213D1A1400123DA1 /* UIImageView+HighlightedWebCache.m */; };
+		4A38F291213D1A1400123DA1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F280213D1A1400123DA1 /* UIImageView+WebCache.m */; };
+		4A38F292213D1A1400123DA1 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F282213D1A1400123DA1 /* UIView+WebCacheOperation.m */; };
+		4A38F2F0213E317D00123DA1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4A38F2E4213E317C00123DA1 /* LICENSE */; };
+		4A38F2F1213E317D00123DA1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A38F2E5213E317C00123DA1 /* README.md */; };
+		4A38F2F2213E317D00123DA1 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F2E8213E317C00123DA1 /* SVIndefiniteAnimatedView.m */; };
+		4A38F2F3213E317D00123DA1 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F2EA213E317C00123DA1 /* SVProgressAnimatedView.m */; };
+		4A38F2F4213E317D00123DA1 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4A38F2EB213E317C00123DA1 /* SVProgressHUD.bundle */; };
+		4A38F2F5213E317D00123DA1 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F2ED213E317C00123DA1 /* SVProgressHUD.m */; };
+		4A38F2F6213E317D00123DA1 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F2EF213E317C00123DA1 /* SVRadialGradientLayer.m */; };
+		4A38F313213EB8C800123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F303213EB8C700123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.m */; };
+		4A38F314213EB8C800123DA1 /* SNSModalWeChatPercentDrivenInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F305213EB8C700123DA1 /* SNSModalWeChatPercentDrivenInteractive.m */; };
+		4A38F315213EB8C800123DA1 /* SNSNavWeChatInteractivePopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F307213EB8C700123DA1 /* SNSNavWeChatInteractivePopAnimator.m */; };
+		4A38F316213EB8C800123DA1 /* SNSNavWeChatInteractivePushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F309213EB8C700123DA1 /* SNSNavWeChatInteractivePushAnimator.m */; };
+		4A38F317213EB8C800123DA1 /* SNSImagePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F30C213EB8C700123DA1 /* SNSImagePreviewCell.m */; };
+		4A38F318213EB8C800123DA1 /* SNSImagePreviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F30E213EB8C700123DA1 /* SNSImagePreviewModel.m */; };
+		4A38F319213EB8C800123DA1 /* SNSImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F310213EB8C700123DA1 /* SNSImagePreviewViewController.m */; };
+		4A38F31A213EB8C800123DA1 /* UIImage+SizeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A38F312213EB8C700123DA1 /* UIImage+SizeHelper.m */; };
 		4A44E5532137B185008E75C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5522137B185008E75C2 /* AppDelegate.m */; };
 		4A44E5562137B185008E75C2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5552137B185008E75C2 /* ViewController.m */; };
 		4A44E5592137B185008E75C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A44E5572137B185008E75C2 /* Main.storyboard */; };
@@ -15,12 +50,7 @@
 		4A44E5612137B186008E75C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5602137B186008E75C2 /* main.m */; };
 		4A44E56B2137B186008E75C2 /* ImgTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E56A2137B186008E75C2 /* ImgTests.m */; };
 		4A44E5762137B186008E75C2 /* ImgUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5752137B186008E75C2 /* ImgUITests.m */; };
-		4A44E5962137EB6B008E75C2 /* SNSImagePreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */; };
 		4A44E5992137F19B008E75C2 /* IMG_0904.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 4A44E5982137F19A008E75C2 /* IMG_0904.JPG */; };
-		4A524691213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A524689213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.m */; };
-		4A524692213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A52468B213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.m */; };
-		4A524693213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A52468E213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.m */; };
-		4A524694213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A524690213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.m */; };
 		4A6350F62138EF4500577956 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350ED2138EF4000577956 /* 3.jpg */; };
 		4A6350F72138EF4500577956 /* 6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350EE2138EF4100577956 /* 6.jpg */; };
 		4A6350F82138EF4500577956 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350EF2138EF4100577956 /* 4.jpg */; };
@@ -30,8 +60,6 @@
 		4A6350FC2138EF4500577956 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350F32138EF4300577956 /* 1.jpg */; };
 		4A6350FD2138EF4500577956 /* 8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350F42138EF4400577956 /* 8.jpg */; };
 		4A6350FE2138EF4500577956 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4A6350F52138EF4400577956 /* 2.jpg */; };
-		4A63512A213960D000577956 /* SNSImagePreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A635129213960D000577956 /* SNSImagePreviewCell.m */; };
-		4A63512D21396ECC00577956 /* SNSImagePreviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +80,74 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A38F24F213D186C00123DA1 /* SNSUIConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSUIConstants.h; sourceTree = "<group>"; };
+		4A38F254213D18A400123DA1 /* UIImage+Proces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Proces.m"; sourceTree = "<group>"; };
+		4A38F255213D18A400123DA1 /* UIImage+Proces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Proces.h"; sourceTree = "<group>"; };
+		4A38F258213D18C300123DA1 /* UIImageView+Balloon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Balloon.h"; sourceTree = "<group>"; };
+		4A38F259213D18C300123DA1 /* UIImageView+Balloon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Balloon.m"; sourceTree = "<group>"; };
+		4A38F25A213D18C300123DA1 /* UIImageView+Proces.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Proces.h"; sourceTree = "<group>"; };
+		4A38F25B213D18C300123DA1 /* UIImageView+Proces.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Proces.m"; sourceTree = "<group>"; };
+		4A38F25E213D19D400123DA1 /* SNSColorConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSColorConfig.h; sourceTree = "<group>"; };
+		4A38F25F213D19EE00123DA1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		4A38F260213D19EE00123DA1 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		4A38F263213D1A1400123DA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4A38F264213D1A1400123DA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A38F266213D1A1400123DA1 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
+		4A38F267213D1A1400123DA1 /* NSData+ImageContentType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ImageContentType.m"; sourceTree = "<group>"; };
+		4A38F268213D1A1400123DA1 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		4A38F269213D1A1400123DA1 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		4A38F26A213D1A1400123DA1 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		4A38F26B213D1A1400123DA1 /* SDWebImageCompat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCompat.m; sourceTree = "<group>"; };
+		4A38F26C213D1A1400123DA1 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		4A38F26D213D1A1400123DA1 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		4A38F26E213D1A1400123DA1 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		4A38F26F213D1A1400123DA1 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		4A38F270213D1A1400123DA1 /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
+		4A38F271213D1A1400123DA1 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
+		4A38F272213D1A1400123DA1 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		4A38F273213D1A1400123DA1 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		4A38F274213D1A1400123DA1 /* SDWebImageOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageOperation.h; sourceTree = "<group>"; };
+		4A38F275213D1A1400123DA1 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImagePrefetcher.h; sourceTree = "<group>"; };
+		4A38F276213D1A1400123DA1 /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImagePrefetcher.m; sourceTree = "<group>"; };
+		4A38F277213D1A1400123DA1 /* UIButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WebCache.h"; sourceTree = "<group>"; };
+		4A38F278213D1A1400123DA1 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
+		4A38F279213D1A1400123DA1 /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		4A38F27A213D1A1400123DA1 /* UIImage+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
+		4A38F27B213D1A1400123DA1 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MultiFormat.h"; sourceTree = "<group>"; };
+		4A38F27C213D1A1400123DA1 /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MultiFormat.m"; sourceTree = "<group>"; };
+		4A38F27D213D1A1400123DA1 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
+		4A38F27E213D1A1400123DA1 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
+		4A38F27F213D1A1400123DA1 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		4A38F280213D1A1400123DA1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		4A38F281213D1A1400123DA1 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
+		4A38F282213D1A1400123DA1 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		4A38F2E4213E317C00123DA1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		4A38F2E5213E317C00123DA1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4A38F2E7213E317C00123DA1 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		4A38F2E8213E317C00123DA1 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		4A38F2E9213E317C00123DA1 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		4A38F2EA213E317C00123DA1 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		4A38F2EB213E317C00123DA1 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		4A38F2EC213E317C00123DA1 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		4A38F2ED213E317C00123DA1 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		4A38F2EE213E317C00123DA1 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		4A38F2EF213E317C00123DA1 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		4A38F302213EB8C700123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSModalWeChatInteractiveAnimatedTransition.h; sourceTree = "<group>"; };
+		4A38F303213EB8C700123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSModalWeChatInteractiveAnimatedTransition.m; sourceTree = "<group>"; };
+		4A38F304213EB8C700123DA1 /* SNSModalWeChatPercentDrivenInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSModalWeChatPercentDrivenInteractive.h; sourceTree = "<group>"; };
+		4A38F305213EB8C700123DA1 /* SNSModalWeChatPercentDrivenInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSModalWeChatPercentDrivenInteractive.m; sourceTree = "<group>"; };
+		4A38F306213EB8C700123DA1 /* SNSNavWeChatInteractivePopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePopAnimator.h; sourceTree = "<group>"; };
+		4A38F307213EB8C700123DA1 /* SNSNavWeChatInteractivePopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePopAnimator.m; sourceTree = "<group>"; };
+		4A38F308213EB8C700123DA1 /* SNSNavWeChatInteractivePushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePushAnimator.h; sourceTree = "<group>"; };
+		4A38F309213EB8C700123DA1 /* SNSNavWeChatInteractivePushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePushAnimator.m; sourceTree = "<group>"; };
+		4A38F30B213EB8C700123DA1 /* SNSImagePreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewCell.h; sourceTree = "<group>"; };
+		4A38F30C213EB8C700123DA1 /* SNSImagePreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewCell.m; sourceTree = "<group>"; };
+		4A38F30D213EB8C700123DA1 /* SNSImagePreviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewModel.h; sourceTree = "<group>"; };
+		4A38F30E213EB8C700123DA1 /* SNSImagePreviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewModel.m; sourceTree = "<group>"; };
+		4A38F30F213EB8C700123DA1 /* SNSImagePreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewViewController.h; sourceTree = "<group>"; };
+		4A38F310213EB8C700123DA1 /* SNSImagePreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewViewController.m; sourceTree = "<group>"; };
+		4A38F311213EB8C700123DA1 /* UIImage+SizeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SizeHelper.h"; sourceTree = "<group>"; };
+		4A38F312213EB8C700123DA1 /* UIImage+SizeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SizeHelper.m"; sourceTree = "<group>"; };
 		4A44E54E2137B185008E75C2 /* Img.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Img.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A44E5512137B185008E75C2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4A44E5522137B185008E75C2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,18 +164,8 @@
 		4A44E5712137B186008E75C2 /* ImgUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImgUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A44E5752137B186008E75C2 /* ImgUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImgUITests.m; sourceTree = "<group>"; };
 		4A44E5772137B186008E75C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A44E5942137EB6B008E75C2 /* SNSImagePreviewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewViewController.h; sourceTree = "<group>"; };
-		4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewViewController.m; sourceTree = "<group>"; };
 		4A44E5972137EC70008E75C2 /* GlobalDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefine.h; sourceTree = "<group>"; };
 		4A44E5982137F19A008E75C2 /* IMG_0904.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0904.JPG; sourceTree = "<group>"; };
-		4A524689213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePopAnimator.m; sourceTree = "<group>"; };
-		4A52468A213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePopAnimator.h; sourceTree = "<group>"; };
-		4A52468B213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSModalWeChatPercentDrivenInteractive.m; sourceTree = "<group>"; };
-		4A52468C213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSModalWeChatPercentDrivenInteractive.h; sourceTree = "<group>"; };
-		4A52468D213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSModalWeChatInteractiveAnimatedTransition.h; sourceTree = "<group>"; };
-		4A52468E213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSNavWeChatInteractivePushAnimator.m; sourceTree = "<group>"; };
-		4A52468F213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSNavWeChatInteractivePushAnimator.h; sourceTree = "<group>"; };
-		4A524690213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSModalWeChatInteractiveAnimatedTransition.m; sourceTree = "<group>"; };
 		4A6350ED2138EF4000577956 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		4A6350EE2138EF4100577956 /* 6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 6.jpg; sourceTree = "<group>"; };
 		4A6350EF2138EF4100577956 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
@@ -90,10 +176,6 @@
 		4A6350F42138EF4400577956 /* 8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8.jpg; sourceTree = "<group>"; };
 		4A6350F52138EF4400577956 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		4A635125213946D400577956 /* Img-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Img-Bridging-Header.h"; sourceTree = "<group>"; };
-		4A635128213960D000577956 /* SNSImagePreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewCell.h; sourceTree = "<group>"; };
-		4A635129213960D000577956 /* SNSImagePreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewCell.m; sourceTree = "<group>"; };
-		4A63512B21396ECC00577956 /* SNSImagePreviewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSImagePreviewModel.h; sourceTree = "<group>"; };
-		4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSImagePreviewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +203,146 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A38F250213D188200123DA1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F255213D18A400123DA1 /* UIImage+Proces.h */,
+				4A38F254213D18A400123DA1 /* UIImage+Proces.m */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		4A38F257213D18C300123DA1 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F260213D19EE00123DA1 /* UIImageView+WebCache.h */,
+				4A38F25F213D19EE00123DA1 /* UIImageView+WebCache.m */,
+				4A38F258213D18C300123DA1 /* UIImageView+Balloon.h */,
+				4A38F259213D18C300123DA1 /* UIImageView+Balloon.m */,
+				4A38F25A213D18C300123DA1 /* UIImageView+Proces.h */,
+				4A38F25B213D18C300123DA1 /* UIImageView+Proces.m */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		4A38F262213D1A1400123DA1 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F263213D1A1400123DA1 /* LICENSE */,
+				4A38F264213D1A1400123DA1 /* README.md */,
+				4A38F265213D1A1400123DA1 /* SDWebImage */,
+			);
+			name = SDWebImage;
+			path = ../../../sohuhy/Pods/SDWebImage;
+			sourceTree = "<group>";
+		};
+		4A38F265213D1A1400123DA1 /* SDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F266213D1A1400123DA1 /* NSData+ImageContentType.h */,
+				4A38F267213D1A1400123DA1 /* NSData+ImageContentType.m */,
+				4A38F268213D1A1400123DA1 /* SDImageCache.h */,
+				4A38F269213D1A1400123DA1 /* SDImageCache.m */,
+				4A38F26A213D1A1400123DA1 /* SDWebImageCompat.h */,
+				4A38F26B213D1A1400123DA1 /* SDWebImageCompat.m */,
+				4A38F26C213D1A1400123DA1 /* SDWebImageDecoder.h */,
+				4A38F26D213D1A1400123DA1 /* SDWebImageDecoder.m */,
+				4A38F26E213D1A1400123DA1 /* SDWebImageDownloader.h */,
+				4A38F26F213D1A1400123DA1 /* SDWebImageDownloader.m */,
+				4A38F270213D1A1400123DA1 /* SDWebImageDownloaderOperation.h */,
+				4A38F271213D1A1400123DA1 /* SDWebImageDownloaderOperation.m */,
+				4A38F272213D1A1400123DA1 /* SDWebImageManager.h */,
+				4A38F273213D1A1400123DA1 /* SDWebImageManager.m */,
+				4A38F274213D1A1400123DA1 /* SDWebImageOperation.h */,
+				4A38F275213D1A1400123DA1 /* SDWebImagePrefetcher.h */,
+				4A38F276213D1A1400123DA1 /* SDWebImagePrefetcher.m */,
+				4A38F277213D1A1400123DA1 /* UIButton+WebCache.h */,
+				4A38F278213D1A1400123DA1 /* UIButton+WebCache.m */,
+				4A38F279213D1A1400123DA1 /* UIImage+GIF.h */,
+				4A38F27A213D1A1400123DA1 /* UIImage+GIF.m */,
+				4A38F27B213D1A1400123DA1 /* UIImage+MultiFormat.h */,
+				4A38F27C213D1A1400123DA1 /* UIImage+MultiFormat.m */,
+				4A38F27D213D1A1400123DA1 /* UIImageView+HighlightedWebCache.h */,
+				4A38F27E213D1A1400123DA1 /* UIImageView+HighlightedWebCache.m */,
+				4A38F27F213D1A1400123DA1 /* UIImageView+WebCache.h */,
+				4A38F280213D1A1400123DA1 /* UIImageView+WebCache.m */,
+				4A38F281213D1A1400123DA1 /* UIView+WebCacheOperation.h */,
+				4A38F282213D1A1400123DA1 /* UIView+WebCacheOperation.m */,
+			);
+			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		4A38F2E3213E317C00123DA1 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F2E4213E317C00123DA1 /* LICENSE */,
+				4A38F2E5213E317C00123DA1 /* README.md */,
+				4A38F2E6213E317C00123DA1 /* SVProgressHUD */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		4A38F2E6213E317C00123DA1 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F2E7213E317C00123DA1 /* SVIndefiniteAnimatedView.h */,
+				4A38F2E8213E317C00123DA1 /* SVIndefiniteAnimatedView.m */,
+				4A38F2E9213E317C00123DA1 /* SVProgressAnimatedView.h */,
+				4A38F2EA213E317C00123DA1 /* SVProgressAnimatedView.m */,
+				4A38F2EB213E317C00123DA1 /* SVProgressHUD.bundle */,
+				4A38F2EC213E317C00123DA1 /* SVProgressHUD.h */,
+				4A38F2ED213E317C00123DA1 /* SVProgressHUD.m */,
+				4A38F2EE213E317C00123DA1 /* SVRadialGradientLayer.h */,
+				4A38F2EF213E317C00123DA1 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		4A38F300213EB8C700123DA1 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F301213EB8C700123DA1 /* Animation */,
+				4A38F30A213EB8C700123DA1 /* ImgPreview */,
+				4A38F311213EB8C700123DA1 /* UIImage+SizeHelper.h */,
+				4A38F312213EB8C700123DA1 /* UIImage+SizeHelper.m */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		4A38F301213EB8C700123DA1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F302213EB8C700123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.h */,
+				4A38F303213EB8C700123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.m */,
+				4A38F304213EB8C700123DA1 /* SNSModalWeChatPercentDrivenInteractive.h */,
+				4A38F305213EB8C700123DA1 /* SNSModalWeChatPercentDrivenInteractive.m */,
+				4A38F306213EB8C700123DA1 /* SNSNavWeChatInteractivePopAnimator.h */,
+				4A38F307213EB8C700123DA1 /* SNSNavWeChatInteractivePopAnimator.m */,
+				4A38F308213EB8C700123DA1 /* SNSNavWeChatInteractivePushAnimator.h */,
+				4A38F309213EB8C700123DA1 /* SNSNavWeChatInteractivePushAnimator.m */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		4A38F30A213EB8C700123DA1 /* ImgPreview */ = {
+			isa = PBXGroup;
+			children = (
+				4A38F30B213EB8C700123DA1 /* SNSImagePreviewCell.h */,
+				4A38F30C213EB8C700123DA1 /* SNSImagePreviewCell.m */,
+				4A38F30D213EB8C700123DA1 /* SNSImagePreviewModel.h */,
+				4A38F30E213EB8C700123DA1 /* SNSImagePreviewModel.m */,
+				4A38F30F213EB8C700123DA1 /* SNSImagePreviewViewController.h */,
+				4A38F310213EB8C700123DA1 /* SNSImagePreviewViewController.m */,
+			);
+			path = ImgPreview;
+			sourceTree = "<group>";
+		};
 		4A44E5452137B185008E75C2 = {
 			isa = PBXGroup;
 			children = (
 				4A6350FF2138EF4700577956 /* img */,
 				4A44E5972137EC70008E75C2 /* GlobalDefine.h */,
+				4A38F25E213D19D400123DA1 /* SNSColorConfig.h */,
 				4A44E5982137F19A008E75C2 /* IMG_0904.JPG */,
 				4A44E5502137B185008E75C2 /* Img */,
 				4A44E5692137B186008E75C2 /* ImgTests */,
@@ -147,8 +364,12 @@
 		4A44E5502137B185008E75C2 /* Img */ = {
 			isa = PBXGroup;
 			children = (
-				4A52467C213CCEDA00024890 /* Model_WeChat_Animation */,
-				4A524679213CCE6400024890 /* ImgPreview */,
+				4A38F2E3213E317C00123DA1 /* SVProgressHUD */,
+				4A38F262213D1A1400123DA1 /* SDWebImage */,
+				4A38F257213D18C300123DA1 /* ImageView */,
+				4A38F250213D188200123DA1 /* Image */,
+				4A38F24F213D186C00123DA1 /* SNSUIConstants.h */,
+				4A38F300213EB8C700123DA1 /* Photo */,
 				4A44E5512137B185008E75C2 /* AppDelegate.h */,
 				4A44E5522137B185008E75C2 /* AppDelegate.m */,
 				4A44E5542137B185008E75C2 /* ViewController.h */,
@@ -179,34 +400,6 @@
 				4A44E5772137B186008E75C2 /* Info.plist */,
 			);
 			path = ImgUITests;
-			sourceTree = "<group>";
-		};
-		4A524679213CCE6400024890 /* ImgPreview */ = {
-			isa = PBXGroup;
-			children = (
-				4A44E5942137EB6B008E75C2 /* SNSImagePreviewViewController.h */,
-				4A44E5952137EB6B008E75C2 /* SNSImagePreviewViewController.m */,
-				4A635128213960D000577956 /* SNSImagePreviewCell.h */,
-				4A635129213960D000577956 /* SNSImagePreviewCell.m */,
-				4A63512B21396ECC00577956 /* SNSImagePreviewModel.h */,
-				4A63512C21396ECC00577956 /* SNSImagePreviewModel.m */,
-			);
-			path = ImgPreview;
-			sourceTree = "<group>";
-		};
-		4A52467C213CCEDA00024890 /* Model_WeChat_Animation */ = {
-			isa = PBXGroup;
-			children = (
-				4A52468C213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.h */,
-				4A52468B213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.m */,
-				4A52468D213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.h */,
-				4A524690213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.m */,
-				4A52468A213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.h */,
-				4A524689213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.m */,
-				4A52468F213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.h */,
-				4A52468E213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.m */,
-			);
-			path = Model_WeChat_Animation;
 			sourceTree = "<group>";
 		};
 		4A6350FF2138EF4700577956 /* img */ = {
@@ -331,6 +524,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A6350FD2138EF4500577956 /* 8.jpg in Resources */,
+				4A38F2F4213E317D00123DA1 /* SVProgressHUD.bundle in Resources */,
 				4A6350FC2138EF4500577956 /* 1.jpg in Resources */,
 				4A6350F72138EF4500577956 /* 6.jpg in Resources */,
 				4A6350F82138EF4500577956 /* 4.jpg in Resources */,
@@ -340,7 +534,11 @@
 				4A44E5992137F19B008E75C2 /* IMG_0904.JPG in Resources */,
 				4A6350FB2138EF4500577956 /* 0.jpg in Resources */,
 				4A6350FE2138EF4500577956 /* 2.jpg in Resources */,
+				4A38F2F0213E317D00123DA1 /* LICENSE in Resources */,
+				4A38F2F1213E317D00123DA1 /* README.md in Resources */,
+				4A38F283213D1A1400123DA1 /* LICENSE in Resources */,
 				4A44E55E2137B186008E75C2 /* LaunchScreen.storyboard in Resources */,
+				4A38F284213D1A1400123DA1 /* README.md in Resources */,
 				4A44E55B2137B186008E75C2 /* Assets.xcassets in Resources */,
 				4A44E5592137B185008E75C2 /* Main.storyboard in Resources */,
 			);
@@ -368,15 +566,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A44E5562137B185008E75C2 /* ViewController.m in Sources */,
-				4A524691213CCF3000024890 /* SNSNavWeChatInteractivePopAnimator.m in Sources */,
+				4A38F25C213D18C300123DA1 /* UIImageView+Balloon.m in Sources */,
+				4A38F25D213D18C300123DA1 /* UIImageView+Proces.m in Sources */,
+				4A38F2F2213E317D00123DA1 /* SVIndefiniteAnimatedView.m in Sources */,
+				4A38F261213D19EF00123DA1 /* UIImageView+WebCache.m in Sources */,
+				4A38F31A213EB8C800123DA1 /* UIImage+SizeHelper.m in Sources */,
 				4A44E5612137B186008E75C2 /* main.m in Sources */,
-				4A524694213CCF3000024890 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */,
-				4A63512D21396ECC00577956 /* SNSImagePreviewModel.m in Sources */,
-				4A524693213CCF3000024890 /* SNSNavWeChatInteractivePushAnimator.m in Sources */,
-				4A44E5962137EB6B008E75C2 /* SNSImagePreviewViewController.m in Sources */,
+				4A38F28A213D1A1400123DA1 /* SDWebImageDownloaderOperation.m in Sources */,
+				4A38F2F5213E317D00123DA1 /* SVProgressHUD.m in Sources */,
+				4A38F315213EB8C800123DA1 /* SNSNavWeChatInteractivePopAnimator.m in Sources */,
+				4A38F2F6213E317D00123DA1 /* SVRadialGradientLayer.m in Sources */,
+				4A38F286213D1A1400123DA1 /* SDImageCache.m in Sources */,
+				4A38F318213EB8C800123DA1 /* SNSImagePreviewModel.m in Sources */,
+				4A38F316213EB8C800123DA1 /* SNSNavWeChatInteractivePushAnimator.m in Sources */,
+				4A38F256213D18A500123DA1 /* UIImage+Proces.m in Sources */,
+				4A38F290213D1A1400123DA1 /* UIImageView+HighlightedWebCache.m in Sources */,
+				4A38F287213D1A1400123DA1 /* SDWebImageCompat.m in Sources */,
+				4A38F285213D1A1400123DA1 /* NSData+ImageContentType.m in Sources */,
+				4A38F28B213D1A1400123DA1 /* SDWebImageManager.m in Sources */,
+				4A38F319213EB8C800123DA1 /* SNSImagePreviewViewController.m in Sources */,
+				4A38F289213D1A1400123DA1 /* SDWebImageDownloader.m in Sources */,
 				4A44E5532137B185008E75C2 /* AppDelegate.m in Sources */,
-				4A63512A213960D000577956 /* SNSImagePreviewCell.m in Sources */,
-				4A524692213CCF3000024890 /* SNSModalWeChatPercentDrivenInteractive.m in Sources */,
+				4A38F28E213D1A1400123DA1 /* UIImage+GIF.m in Sources */,
+				4A38F28C213D1A1400123DA1 /* SDWebImagePrefetcher.m in Sources */,
+				4A38F28D213D1A1400123DA1 /* UIButton+WebCache.m in Sources */,
+				4A38F291213D1A1400123DA1 /* UIImageView+WebCache.m in Sources */,
+				4A38F317213EB8C800123DA1 /* SNSImagePreviewCell.m in Sources */,
+				4A38F292213D1A1400123DA1 /* UIView+WebCacheOperation.m in Sources */,
+				4A38F28F213D1A1400123DA1 /* UIImage+MultiFormat.m in Sources */,
+				4A38F314213EB8C800123DA1 /* SNSModalWeChatPercentDrivenInteractive.m in Sources */,
+				4A38F288213D1A1400123DA1 /* SDWebImageDecoder.m in Sources */,
+				4A38F2F3213E317D00123DA1 /* SVProgressAnimatedView.m in Sources */,
+				4A38F313213EB8C800123DA1 /* SNSModalWeChatInteractiveAnimatedTransition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
