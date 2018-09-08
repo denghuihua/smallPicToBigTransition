@@ -66,35 +66,6 @@
     return frame;
 }
 
-- (void)adjustZoomScale
-{
-    if (!self.imgView) {
-        return;
-    }
-    
-    CGSize imgSize = self.imgView.image.size;
-    
-    //判断首先缩放的值
-    float scaleX = self.imgView.superview.frame.size.width/imgSize.width;
-    float scaleY = self.imgView.superview.frame.size.height/imgSize.height;
-    
-    if (scaleX > scaleY)
-    {
-        float imgViewWidth = imgSize.width * scaleY;
-        self.imgView.frame = (CGRect){self.imgView.superview.frame.size.width/2 - imgViewWidth/2,0,imgViewWidth,self.imgView.superview.frame.size.height};
-        float x = self.frame.size.width/self.imgView.frame.size.width;
-        self.scrollView.maximumZoomScale = MAX(x, 1.8);
-        self.scrollView.maximumZoomScale = MIN(self.scrollView.maximumZoomScale, 3);
-    }
-    else
-    {
-        float imgViewHeight = imgSize.height * scaleX;
-        self.imgView.frame = (CGRect){0,self.imgView.superview.frame.size.height/2 - imgViewHeight/2,self.imgView.superview.frame.size.width,imgViewHeight};
-        float y = self.frame.size.height/self.imgView.frame.size.height;
-        self.scrollView.maximumZoomScale = MAX(y, 1.8);
-        self.scrollView.maximumZoomScale = MIN(self.scrollView.maximumZoomScale, 3);
-    }
-}
 
 #pragma mark - UIScrollViewDelegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

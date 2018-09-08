@@ -59,38 +59,22 @@
             endingLineNumber = "155"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[SNSImagePreviewViewController collectionView:cellForItemAtIndexPath:]"
-                  moduleName = "Img"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huihuadeng/sohuhy/sohuhy/Feature/Timeline(TL)/Feed/Animation/ImgPreview/SNSImagePreviewViewController.m"
-                  timestampString = "557735025.147481"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "155"
-                  endingLineNumber = "155"
-                  offsetFromSymbolStart = "1089">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__71-[SNSImagePreviewViewController collectionView:cellForItemAtIndexPath:]_block_invoke.119"
-                  moduleName = "Img"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/huihuadeng/sohuhy/sohuhy/Feature/Timeline(TL)/Feed/Animation/ImgPreview/SNSImagePreviewViewController.m"
-                  timestampString = "557735025.154162"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "157"
-                  endingLineNumber = "157"
-                  offsetFromSymbolStart = "139">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Img/ViewController.m"
+            timestampString = "558084309.376107"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-tapAction:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

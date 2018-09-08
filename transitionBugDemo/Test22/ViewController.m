@@ -68,7 +68,6 @@
     self.animatedTransition = nil;
     
     TLFeedTogetherViewController *second = [[TLFeedTogetherViewController alloc] init];
-    second.modalPresentationStyle = UIModalPresentationOverFullScreen;
     
     //2.设置代理
     second.transitioningDelegate = self.animatedTransition;

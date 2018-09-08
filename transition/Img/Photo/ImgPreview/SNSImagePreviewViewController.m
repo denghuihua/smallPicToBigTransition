@@ -110,7 +110,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded: {
             
-            if (scale > 0.95f) {
+            if (scale > 0.55f) {
                 [UIView animateWithDuration:0.2 animations:^{
                     
                     currentPreviewImageView.center = self.transitionImgViewCenter;
@@ -166,7 +166,7 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
     
     SNSImagePreviewModel *imgModel = [self.imgDataArr objectAtIndex:indexPath.item];
     UIImage *cacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imgModel.bigImgUrl];
-    UIImage *originSmallCacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imgModel.originSmallImgUrl];
+//    UIImage *originSmallCacheImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:imgModel.originSmallImgUrl];
     //原图 》 原图缩略图 》 剪裁图
     if (!cacheImage) {
         [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.originSmallImgUrl] placeholderImage:nil];
@@ -176,32 +176,30 @@ static NSString *CellIdentifier = @"SNSImagePreviewCell";
         }
         cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.imageSize];
         cell.scrollView.contentSize = cell.imgView.frame.size;
-        [cell adjustZoomScale];
+    
         
         //下载大图
         [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] options:SDWebImageRefreshCached progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             [collectionView reloadData];
         }];
-    }else if (!originSmallCacheImage){
-        [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.smallImgUrl] placeholderImage:nil];
-        //show loading
-        if (self.isViewDidAppear) {
-            [SVProgressHUD show];
-        }
-        cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.clipImageSize];
-        cell.scrollView.contentSize = cell.imgView.frame.size;
-        [cell adjustZoomScale];
-        
-        //下载大图
-        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] options:SDWebImageRefreshCached progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-            [collectionView reloadData];
-        }];
-    }
-    else
+//    }else if (!originSmallCacheImage){
+//        [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.smallImgUrl] placeholderImage:nil];
+//        //show loading
+//        if (self.isViewDidAppear) {
+//            [SVProgressHUD show];
+//        }
+//        cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.clipImageSize];
+//        cell.scrollView.contentSize = cell.imgView.frame.size;
+//        
+//        //下载大图
+//        [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] options:SDWebImageRefreshCached progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+//            [collectionView reloadData];
+//        }];
+//    }
+    }else
     {
         cell.imgView.frame = [UIImage scaleBigFrameWithSize:imgModel.imageSize];
         cell.scrollView.contentSize = cell.imgView.frame.size;
-        [cell adjustZoomScale];
         [cell.imgView sns_setImageWithURL:[NSURL URLWithString:imgModel.bigImgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             
         } completedUIChangeBlock:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {

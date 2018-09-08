@@ -33,9 +33,9 @@
 //    
 //    NSArray *smallImgUrl = @[@"https://c1c2133e2cc13.cdn.sohucs.com/s_v4_4a/pic/20180830/410913555139796224.jpg",@"https://c1c2133e2cc13.cdn.sohucs.com/s_v4_4ab/pic/20180830/410913558868532480.jpg",@"https://c1c2133e2cc13.cdn.sohucs.com/s_v4_4ab/pic/20180830/410913560000994560.jpg",@"https://c1c2133e2cc13.cdn.sohucs.com/s_v4_4ab/pic/20180830/410913560114240768.jpg"];
     
-    NSArray *bigImageUrlArr = @[@"https://d040779c2cd49.cdn.sohucs.com/s_big/pic/20180903/412343626933217664.jpg"];
+    NSArray *bigImageUrlArr = @[@"https://c1c2133e2cc13.cdn.sohucs.com/s_big/pic/20180828/410132112834829312"];
     
-    NSArray *smallImgUrl = @[@"https://d040779c2cd49.cdn.sohucs.com/s_v3_h_c/pic/20180903/412343626933217664.jpg"];
+    NSArray *smallImgUrl = @[@"https://c1c2133e2cc13.cdn.sohucs.com/s_mini/pic/20180828/410132112834829312"];
 
     
     
@@ -57,11 +57,11 @@
         imgView.contentMode = UIViewContentModeScaleAspectFill;
         imgView.clipsToBounds = YES; 
         
-        float rate = imgView.frame.size.height/imgView.frame.size.width;
-        float rate2 = 924/694;
-        if (rate2 > rate) {
-            imgView.layer.contentsRect = CGRectMake(0, 0, 1, rate/rate2);
-        }
+//        float rate = imgView.frame.size.height/imgView.frame.size.width;
+//        float rate2 = 924/694;
+//        if (rate2 > rate) {
+//            imgView.layer.contentsRect = CGRectMake(0, 0, 1, rate/rate2);
+//        }
         
         SNSImagePreviewModel *model = [[SNSImagePreviewModel alloc] init];
         model.smallImgFrame = imgView.frame;
@@ -71,7 +71,7 @@
             case 0:
             {
                 //tw th 696 924 w 1080 h 9246   
-                model.imageSize = CGSizeMake(1080, 9246); 
+                model.imageSize = CGSizeMake(440, 440); 
                 model.clipImageSize = CGSizeMake(694, 924);
             }
                 break;

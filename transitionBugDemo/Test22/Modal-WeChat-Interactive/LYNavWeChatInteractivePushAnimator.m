@@ -29,7 +29,7 @@
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     [containerView addSubview:bgView];
     bgView.alpha = 0;
-    bgView.backgroundColor = [UIColor blackColor];
+    bgView.backgroundColor = [UIColor greenColor];
     
     //ToVC
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -37,12 +37,14 @@
     [containerView addSubview:toView];
     
     toView.frame = CGRectMake(0, kScreenHeight , kScreenWidth, kScreenHeight);     
-   
+    toView.backgroundColor = [UIColor clearColor];
+    
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         
         bgView.alpha = 0.6;
         toView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     } completion:^(BOOL finished) {
+        toView.backgroundColor = [UIColor grayColor];
         [bgView removeFromSuperview];
         [transitionContext completeTransition:YES];
     }];

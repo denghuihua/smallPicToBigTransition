@@ -80,10 +80,11 @@
             break;
         case UIGestureRecognizerStateEnded:
             
-            if (scrale > 0.95f){
+            if (scrale > 0.55f){
                 
                 [self cancelInteractiveTransition];
                 [self interPercentCancel];
+               
             }
             else{
                 [self finishInteractiveTransition];

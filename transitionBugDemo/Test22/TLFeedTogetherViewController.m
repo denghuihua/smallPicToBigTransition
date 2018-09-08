@@ -13,7 +13,8 @@
 @interface TLFeedTogetherViewController ()<UIViewControllerTransitioningDelegate>
 
 @property(nonatomic, strong) UIView  *containerView;
-
+@property(nonatomic, assign) CGPoint  containerViewCenter;
+@property (nonatomic, strong) LYModalWeChatInteractiveAnimatedTransition *animatedTransition;
 @end
 
 @implementation TLFeedTogetherViewController
@@ -23,13 +24,15 @@
     // Do any additional setup after loading the view.
     NSLog(@"viewDidLoad");
     
-    self.view.backgroundColor = [UIColor clearColor];
+   
 //    self.transitioningDelegate = self;
     [self.view addSubview:self.containerView];
     
     UIPanGestureRecognizer *interactiveTransitionRecognizer;
     interactiveTransitionRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(interactiveTransitionRecognizerAction:)];
     [self.containerView addGestureRecognizer:interactiveTransitionRecognizer];
+    
+    self.containerViewCenter = self.containerView.center;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,15 +61,12 @@
 
 - (void)interactiveTransitionRecognizerAction:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-/*
-    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
     
-    CGFloat scale = 1 - fabs(translation.y / ScreenHeight);
+    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
+    CGFloat scale = 1 - fabs(translation.y / kScreenHeight);
     scale = scale < 0 ? 0 : scale;
     
-    NSLog(@"second = %f", scale);
+    NSLog(@"second = %f====translation:%f", scale,translation.y);
     switch (gestureRecognizer.state) {
         case UIGestureRecognizerStatePossible:
             break;
@@ -74,9 +74,7 @@
             
             //1. 设置代理
             self.animatedTransition = nil;
-            
             self.transitioningDelegate = self.animatedTransition;
-            
             self.animatedTransition.gestureRecognizer = gestureRecognizer;
             
             //3.dismiss
@@ -86,37 +84,39 @@
             break;
         case UIGestureRecognizerStateChanged: {
             
-            _imgView.center = CGPointMake(self.transitionImgViewCenter.x + translation.x * scale, self.transitionImgViewCenter.y + translation.y);
-            _imgView.transform = CGAffineTransformMakeScale(scale, scale);
-            
-            self.animatedTransition.beforeImageViewFrame = self.beforeImageViewFrame;
-            
+            self.containerView.center = CGPointMake(self.containerViewCenter.x , self.containerViewCenter.y + translation.y);
+            NSLog(@"containerViewCenter:%@",NSStringFromCGPoint(self.containerViewCenter));
         }
             break;
         case UIGestureRecognizerStateFailed:
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded: {
             
-            if (scale > 0.95f) {
+            if (scale > 0.55f) {
                 [UIView animateWithDuration:0.2 animations:^{
                     
-                    self.imgView.center = self.transitionImgViewCenter;
-                    self.imgView.transform = CGAffineTransformMakeScale(1, 1);
+                     self.containerView.center =  self.containerViewCenter;
+
                 } completion:^(BOOL finished) {
                     
-                    self.imgView.transform = CGAffineTransformIdentity;
                 }];
             }else{
                 
             }
-            self.animatedTransition.currentImageView = _imgView;
-            self.animatedTransition.currentImageViewFrame = _imgView.frame;
-            
+
             self.animatedTransition.gestureRecognizer = nil;
         }
     }
 }
-*/
+
+
+- (LYModalWeChatInteractiveAnimatedTransition *)animatedTransition {
+    if (!_animatedTransition) {
+        _animatedTransition = [[LYModalWeChatInteractiveAnimatedTransition alloc] init];
+    }
+    return _animatedTransition;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
