@@ -12,14 +12,13 @@
 @implementation LYNavWeChatInteractivePushAnimator
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 1;
+    return .3;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     NSLog(@"animation start");
     //转场过渡的容器view
     UIView *containerView = [transitionContext containerView];
-    
     
     //FromVC
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -41,9 +40,9 @@
     
     toView.frame = CGRectMake(0, kScreenHeight , kScreenWidth, kScreenHeight);     
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.03 options:UIViewAnimationOptionCurveEaseIn animations:^{
         
-        bgView.alpha = 0.6;
+        bgView.alpha = 0.8;
         toView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     } completion:^(BOOL finished) {
         [bgView removeFromSuperview];

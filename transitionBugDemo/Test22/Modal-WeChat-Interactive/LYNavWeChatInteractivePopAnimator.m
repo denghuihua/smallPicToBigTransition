@@ -12,7 +12,7 @@
 @implementation LYNavWeChatInteractivePopAnimator
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 6;
+    return .3;
 }
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     

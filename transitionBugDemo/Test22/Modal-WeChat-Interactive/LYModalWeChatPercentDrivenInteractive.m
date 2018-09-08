@@ -111,6 +111,7 @@
     //有渐变的黑色背景
     _blackBgView = [[UIView alloc] initWithFrame:containerView.bounds];
     _blackBgView.backgroundColor = [UIColor blackColor];
+    _blackBgView.alpha = 0.8;
     [containerView addSubview:_blackBgView];
     
     //FromVC
@@ -123,7 +124,7 @@
 - (void)updateInterPercent:(CGFloat)scale{
     //    NSLog(@"变化");
     
-    _blackBgView.alpha = scale * scale * scale;
+    _blackBgView.alpha = 0.8 * scale * scale * scale;
 }
 
 - (void)interPercentCancel{
@@ -137,7 +138,7 @@
     //FromVC
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *fromView = fromViewController.view;
-    fromView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+    fromView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
     [containerView addSubview:fromView];
     
     [_blackBgView removeFromSuperview];
@@ -158,15 +159,10 @@
     UIView *toView = toViewController.view;
     [containerView addSubview:toView];
     
-    //有渐变的黑色背景
-    UIView *bgView = [[UIView alloc] initWithFrame:containerView.bounds];
-    bgView.backgroundColor = [UIColor blackColor];
-    bgView.alpha = scale;
-    [containerView addSubview:bgView];
     
     [UIView animateWithDuration:0.4 delay:0.0 usingSpringWithDamping:0.8 initialSpringVelocity:0.1 options:UIViewAnimationOptionCurveLinear animations:^{
     
-        bgView.alpha = 0;
+        self.blackBgView.alpha = 0;
         
     }completion:^(BOOL finished) {
         
@@ -175,11 +171,10 @@
         [self.blackBgView removeFromSuperview];
         self.blackBgView = nil;
         
-        [bgView removeFromSuperview];
-        
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }
+
 - (void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     self.transitionContext = transitionContext;

@@ -27,7 +27,7 @@
     // Do any additional setup after loading the view.
     NSLog(@"viewDidLoad");
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.8];
 //    self.transitioningDelegate = self;
 //    [self.view addSubview:self.bgView];
     [self.view addSubview:self.containerView];
