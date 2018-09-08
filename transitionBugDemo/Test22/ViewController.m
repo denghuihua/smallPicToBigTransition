@@ -28,7 +28,6 @@
     [self.view addSubview:button];
     
     
-    
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -68,8 +67,13 @@
     self.animatedTransition = nil;
     
     TLFeedTogetherViewController *second = [[TLFeedTogetherViewController alloc] init];
-    
     //2.设置代理
+    
+    self.definesPresentationContext = YES;
+    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+ ;
+    
+    
     second.transitioningDelegate = self.animatedTransition;
     //3.push跳转
     NSLog(@"present before");

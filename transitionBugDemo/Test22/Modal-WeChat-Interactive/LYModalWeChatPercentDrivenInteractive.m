@@ -132,13 +132,13 @@
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     
     //转场过渡的容器view
-//    UIView *containerView = [transitionContext containerView];
+    UIView *containerView = [transitionContext containerView];
     
     //FromVC
-//    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-//    UIView *fromView = fromViewController.view;
-//    fromView.backgroundColor = [UIColor blackColor];
-//    [containerView addSubview:fromView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIView *fromView = fromViewController.view;
+    fromView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
+    [containerView addSubview:fromView];
     
     [_blackBgView removeFromSuperview];
     _blackBgView = nil;

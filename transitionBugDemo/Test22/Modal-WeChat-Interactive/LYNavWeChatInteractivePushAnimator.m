@@ -16,36 +16,39 @@
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
-    
+    NSLog(@"animation start");
     //转场过渡的容器view
     UIView *containerView = [transitionContext containerView];
+    
     
     //FromVC
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *fromView = fromViewController.view;
     [containerView addSubview:fromView];
+    containerView.backgroundColor  = fromView.backgroundColor;
     
     //渐变背景
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     [containerView addSubview:bgView];
     bgView.alpha = 0;
-    bgView.backgroundColor = [UIColor greenColor];
+    bgView.backgroundColor = [UIColor blackColor];
     
     //ToVC
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIView *toView = toViewController.view;
+    toView.backgroundColor = [UIColor clearColor];
     [containerView addSubview:toView];
     
     toView.frame = CGRectMake(0, kScreenHeight , kScreenWidth, kScreenHeight);     
-    toView.backgroundColor = [UIColor clearColor];
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         
         bgView.alpha = 0.6;
         toView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
     } completion:^(BOOL finished) {
-        toView.backgroundColor = [UIColor grayColor];
         [bgView removeFromSuperview];
+        [fromView removeFromSuperview];
+        NSLog(@"animation end");
         [transitionContext completeTransition:YES];
     }];
 }

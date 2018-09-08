@@ -12,7 +12,7 @@
 @implementation LYNavWeChatInteractivePopAnimator
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 1;
+    return 6;
 }
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext{
     
@@ -23,9 +23,9 @@
     /* 链接 https://stackoverflow.com/questions/25588617/ios-8-screen-blank-after-dismissing-view-controller-with-custom-presentation
      view controllers to your containerView in the (void)animateTransition:(id )transitionContext method of your animation controller. Since you are using a custom modal presentation, the presenting view controller is still shown beneath the presented view controller. Now since it's still visible you don't need to add it to the container view. Instead only add the presented view controller to the containerView. Should look something like this inside of your animateTransition: method
      */
-//    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-//    UIView *toView = toViewController.view;
-//    [containerView addSubview:toView];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    UIView *toView = toViewController.view;
+    [containerView addSubview:toView];
 
     
     //有渐变的黑色背景
@@ -38,7 +38,7 @@
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIView *fromView = fromViewController.view;
     fromView.backgroundColor = [UIColor clearColor];
-//    [containerView addSubview:fromView];
+    [containerView addSubview:fromView];
     
     fromView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
       
