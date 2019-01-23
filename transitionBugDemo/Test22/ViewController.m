@@ -69,8 +69,9 @@
     TLFeedTogetherViewController *second = [[TLFeedTogetherViewController alloc] init];
     //2.设置代理
     
-    self.definesPresentationContext = YES;
-    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    self.definesPresentationContext = YES;
+//    self.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    self.modalPresentationStyle = UIModalPresentationCurrentContext;
  ;
     
     
