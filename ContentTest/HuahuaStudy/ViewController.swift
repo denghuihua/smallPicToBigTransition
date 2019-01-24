@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
      var imgView: UIImageView?
+    var tapTimes:CGFloat = 0.0
     
     
     override func viewDidLoad() {
@@ -17,14 +18,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let imageView = UIImageView()
-        imageView.frame = CGRect(x: 100, y: 100, width: 100, height: 100);
+        imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 300);
         self.view.addSubview(imageView)
+        
         
         imageView.image = UIImage(named: "IMG_0461.jpg")
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = UIColor.red
         imgView = imageView
+        
         
         let btn = UIButton(type:.custom)
         btn.frame = CGRect(x: 20, y: 20, width: 100, height: 44)
@@ -45,19 +48,16 @@ class ViewController: UIViewController {
     
     @objc func btnAction() {
         print("btnAction")
-        if self.imgView?.frame.size.height != self.view?.frame.size.height {
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.imgView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
-            }) { (finish:Bool) in
-                
-            }
-        }else{
-            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
-                self.imgView?.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
-            }) { (finish:Bool) in
-                
-            }
-        }
+        tapTimes = tapTimes + 1
+////        let transform = CGAffineTransform.init(scaleX: 0.5, y: 0.5)//        transform.translatedBy(x: -200, y: -200)
+//        let pingyiTransform = CGAffineTransform.init(translationX:0, y: tapTimes  * 100.0);
+////    let scaleTransform = pingyiTransform.scaledBy(x: 0.5, y: 0.5)
+//       // imgView?.transform = pingyiTransform
+//        imgView?.transform = pingyiTransform
+        print("before\(self.imgView?.center),\(self.imgView?.layer.position)")
+        
+        self.imgView?.layer.anchorPoint = CGPoint.init(x: 0, y: 0);
+        print("after\(self.imgView?.center),\(self.imgView?.layer.position)")
     }
     
     @objc func showPortAction(){
